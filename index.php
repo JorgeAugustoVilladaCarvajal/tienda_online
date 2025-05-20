@@ -50,7 +50,7 @@ print_r($_SESSION);
                     <a href="#" class="nav-link">Contacto</a>
                 </li>
             </ul>
-            <a href="carrito.php" class="btn btn-light" style="background-color: #cba0e3;">
+            <a href="checkout.php" class="btn btn-light" style="background-color: #cba0e3;">
               Carrito<span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span>
             </a>
       </div>
