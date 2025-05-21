@@ -142,11 +142,12 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 crossorigin="anonymous"></script>
 
 <script>
-  function addProducto(id, token) {
-    let url = 'clases/carrito.php'
+  function actualizaCantidad(cantidad, id) {
+    let url = 'clases/actualizar_carrito.php'
     let formData = new FormData()
+    formData.append('action', 'agregar')
     formData.append('id', id)
-    formData.append('token', token)
+    formData.append('cantidad', cantidad)
 
     fetch (url, {
       method: 'POST',
@@ -155,8 +156,10 @@ crossorigin="anonymous"></script>
     }).then(response => response.json())
     .then(data => {
       if(data.ok){
-      let elemento = document.getElementById("num_cart")
-      elemento.innerHTML = data.numero
+
+      let divsubtotal = document.getElementById("subtotal_" + id);
+
+      divsubtotal.innerHTML = data.sub
     }
     })
     }

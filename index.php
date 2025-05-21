@@ -112,7 +112,9 @@ crossorigin="anonymous"></script>
       method: 'POST',
       body: formData,
       mode: 'cors',
-    }).then(response => response.json())
+    }.then(response => response.text())
+.then(text => console.log("Respuesta del servidor:", text))
+)
     .then(data => {
       if(data.ok){
       let elemento = document.getElementById("num_cart")

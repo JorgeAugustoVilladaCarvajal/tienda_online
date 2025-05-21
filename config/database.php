@@ -1,7 +1,8 @@
 <?php //propiedades para ayudarme a conectar a nuestro motor de base de datos
 class Database 
 {
-    private $hostname = 'localhost'; 
+    private $hostname = '127.0.0.1';
+    
     private $database = 'tienda_online';
     private $username = 'root';
     private $password = '';
@@ -11,8 +12,9 @@ class Database
     {
         try{
         $conexion = "mysql:host=" . $this->hostname . 
-            ";dbname=" . $this->database . 
-            ";charset=" . $this->charset;
+    ";port=3306;dbname=" . $this->database . 
+    ";charset=" . $this->charset;
+
 
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
