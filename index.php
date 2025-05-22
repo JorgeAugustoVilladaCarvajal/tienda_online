@@ -8,7 +8,7 @@ $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo = 1"
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-//session_destroy();
+session_destroy();
 
 print_r($_SESSION);
 
@@ -112,17 +112,19 @@ crossorigin="anonymous"></script>
       method: 'POST',
       body: formData,
       mode: 'cors',
-    }.then(response => response.text())
-.then(text => console.log("Respuesta del servidor:", text))
-)
+})
+    .then(response => response.json())
     .then(data => {
       if(data.ok){
       let elemento = document.getElementById("num_cart")
       elemento.innerHTML = data.numero
     }
     })
+    
     }
 </script>
+
+
 
 </body>
 </html>

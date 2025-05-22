@@ -155,11 +155,13 @@ crossorigin="anonymous"></script>
       mode: 'cors',
     }).then(response => response.json())
     .then(data => {
+
       if(data.ok){
 
       let divsubtotal = document.getElementById("subtotal_" + id);
 
       divsubtotal.innerHTML = data.sub
+
     }
     })
     }
