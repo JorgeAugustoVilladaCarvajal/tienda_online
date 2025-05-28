@@ -1,5 +1,7 @@
 <?php
 
+define('CLIENT_ID', 'AU2fyDOAr25kWnJpR-g3vmIL6kYu7qej0YRVUzAQ76j_PlakLZRuVSMVtP67EEAZqkPMDnJlN38G5QLi');
+define('CURRENCY', 'USD');
 define('KEY_TOKEN', 'APR.wqc-354*');
 define("MONEDA", "$");
 
